@@ -1,9 +1,19 @@
 #include "open_file.h"
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/stat.h>
+#include <assert.h>
+
+#define INPUT_FILENAME "onegin.txt"
+
 int open_file(FILE** fp, struct stat* buf)
 {
+    assert(fp);
+    assert(buf);
+    
     *fp = fopen(INPUT_FILENAME, "r");
-    if (fp == NULL)
+    if (*fp == NULL)
     {
         printf("Error in reading file\n");
         return 1;
@@ -22,6 +32,6 @@ int open_file(FILE** fp, struct stat* buf)
         fclose(*fp);
         return 1;
     }
-
+    
     return 0;
 }

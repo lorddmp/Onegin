@@ -1,13 +1,7 @@
 #ifndef OPEN_FILE
-#define OPENFILE
+#define OPEN_FILE
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <sys/stat.h>
-#include <string.h>
-#include <ctype.h>
-
-#define INPUT_FILENAME "onegin.txt"
 
 int open_file(FILE** fp, struct stat* buf);
 

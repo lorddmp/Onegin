@@ -2,20 +2,14 @@
 #define SORTFILE
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <sys/stat.h>
-#include <string.h>
-#include <ctype.h>
+#include "structure.h"
 
+struct_string_and_strlen** bubble_sort_from_start(struct_string_and_strlen** adr_struct, int num_str);
 
-#define INPUT_FILENAME "onegin.txt"
-#define OUTPUT_FILENAME_START "onegin_startsort.txt"
-#define OUTPUT_FILENAME_END "onegin_endsort.txt"
-#define FROM_START 0
-#define FROM_END 1
+struct_string_and_strlen** bubble_sort_from_end(struct_string_and_strlen** adr_struct, int num_str);
 
-int bubble_sort(bool mode, char*** adr_adr, int num_str);
+int my_strcmp_from_start(struct_string_and_strlen* a, struct_string_and_strlen* b);
 
-int my_strcmp(bool mode, char* a, char* b);
+int my_strcmp_from_end(struct_string_and_strlen* a, struct_string_and_strlen* b);
 
 #endif

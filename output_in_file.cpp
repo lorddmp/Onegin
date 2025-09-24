@@ -1,7 +1,13 @@
 #include "output_in_file.h"
 
-int output_in_file(const char* filename, char** adr_adr, int num_str)
+#include <stdio.h>
+#include <assert.h>
+
+int output_in_file(const char* filename, struct_string_and_strlen** adr_struct, int num_str)
 {
+    assert(filename);
+    assert(adr_struct);
+    
     FILE* fpp = fopen(filename, "w");
 
     if (fpp == NULL)
@@ -11,7 +17,7 @@ int output_in_file(const char* filename, char** adr_adr, int num_str)
     }
     
     for (int i = 0; i < num_str; i++)
-        fputs(*(adr_adr + i), fpp);
+        fputs(adr_struct[i]->string, fpp);
     
     return 0;
 }
